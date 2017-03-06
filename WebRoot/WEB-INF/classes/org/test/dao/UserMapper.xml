@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.test.dao.UserMapper">
+    <!-- 解决表名与字段不匹配 -->
+    <resultMap type="org.test.po.User" id="userResultMap">
+        <id property="id" column="id"/>
+        <result property="gender" column="gender"/>
+        <result property="age" column="age"/>
+        <result property="name" column="nickname"/>
+        <result property="username" column="username"/>
+        <result property="password" column="pwd_md5"/>
+        <result property="mail" column="mail"/>
+        <result property="phonenum" column="phone_number"/>
+    </resultMap>
+    
+    <select id="findAllUsers" resultMap="userResultMap">
+        select * from t_user
+    </select>
+    
+    <insert id="saveUser" parameterType="User" useGeneratedKeys="true"   keyProperty="id">
+    	insert into t_user (gender,age,nickname,username,pwd_MD5,mail,phone_number) values(#{gender},#{age},#{name},#{username},#{password},#{mail},#{phonenum})
+    </insert>
+    
+    <select id="findByName" resultMap="userResultMap" parameterType="String">
+    	select * from t_user where username=#{username}
+    </select>
+    
+    <select id="findById" resultMap="userResultMap" parameterType="int">
+    	select * from t_user where id=#{id}
+    </select>
+</mapper>
