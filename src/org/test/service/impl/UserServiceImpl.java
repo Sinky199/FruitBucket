@@ -27,32 +27,35 @@ public class UserServiceImpl implements UserService{
 		
 		if(checkUsername(username)){
 			User user = new User(name, age, gender, username, pwdMd5, mail, phonenum);
-			dao.saveUser(user);
+		//	dao.saveUser(user);
 			return true;
 		}
+		return false;
+	}
+
+	public boolean login(String username, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean checkUsername(String username) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 	
-	public boolean checkUsername(String username){
-		User user = dao.findByName(username);
-		if(user==null){
-			return true;
-		}
-		return false;
-	}
 	
-	public boolean login(String username, String password){
-		Result result;
-		User user = dao.findByName(username);
-		if(user==null){
-			result = new Result(10010,"用户不存在！");
-			return false;
-		}else if(MD5Util.MD5(password).equals(user.getPassword())){
-			return true;
-		}
-			result = new Result(10010,"密码错误！");
-		return false;
-	}
+//	public boolean login(String username, String password){
+//		Result result;
+//		User user = dao.findByName(username);
+//		if(user==null){
+//			result = new Result(10010,"用户不存在！");
+//			return false;
+//		}else if(MD5Util.MD5(password).equals(user.getPassword())){
+//			return true;
+//		}
+//			result = new Result(10010,"密码错误！");
+//		return false;
+//	}
 	
 	
 }

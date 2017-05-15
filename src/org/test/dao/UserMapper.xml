@@ -3,30 +3,43 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.test.dao.UserMapper">
     <!-- 解决表名与字段不匹配 -->
-    <resultMap type="org.test.po.User" id="userResultMap">
+    <resultMap type="org.test.po.UserInfo" id="userResultMap">
         <id property="id" column="id"/>
-        <result property="gender" column="gender"/>
-        <result property="age" column="age"/>
-        <result property="name" column="nickname"/>
-        <result property="username" column="username"/>
-        <result property="password" column="pwd_md5"/>
-        <result property="mail" column="mail"/>
-        <result property="phonenum" column="phone_number"/>
+        <result property="name" column="r_name"/>
+        <result property="age" column="r_age"/>
+        <result property="height" column="r_height"/>
+        <result property="weight" column="r_weight"/>
+        <result property="gender" column="r_gender"/>
+        <result property="hobby" column="r_hobby"/>
+        <result property="chara" column="r_chara"/>
+        <result property="location" column="r_location"/>
+        <result property="advantage" column="r_advantage"/>
+        <result property="from" column="r_from"/>
+        <result property="live" column="r_live"/>
+        <result property="exp" column="r_exp"/>
+        <result property="tendType" column="r_tendType"/>
+        <result property="require" column="r_require"/>
+        <result property="isMarry" column="r_isMarry"/>
+        <result property="isHouseCar" column="r_isHouseCar"/>
+        <result property="headUrl" column="head_url"/>
+        <result property="username" column="r_username"/>
+        <result property="pwd" column="pwd_MD5"/>
     </resultMap>
     
     <select id="findAllUsers" resultMap="userResultMap">
-        select * from t_user
+        select * from t_userInfo
     </select>
     
     <insert id="saveUser" parameterType="User" useGeneratedKeys="true"   keyProperty="id">
-    	insert into t_user (gender,age,nickname,username,pwd_MD5,mail,phone_number) values(#{gender},#{age},#{name},#{username},#{password},#{mail},#{phonenum})
+    	insert into t_userinfo(r_name,r_age,r_height,r_weight,r_gender,r_hobby,r_chara,r_location,r_advantage,r_from,r_live,r_exp,r_tendType,r_require,r_isMarry,r_isHouseCar,head_url,r_username,pwd_MD5) 
+    	values(#{name},#{age},#{height},#{weight},#{gender},#{hobby},#{chara},#{location},#{advantage},#{from},#{live},#{exp},#{tendType},#{require},#{isMarry},#{isHouseCar},#{headUrl},#{username},#{pwd})
     </insert>
     
-    <select id="findByName" resultMap="userResultMap" parameterType="String">
-    	select * from t_user where username=#{username}
+   <select id="findByName" resultMap="userResultMap" parameterType="String">
+    	select * from t_userinfo where r_username=#{username}
     </select>
     
     <select id="findById" resultMap="userResultMap" parameterType="int">
-    	select * from t_user where id=#{id}
+    	select * from t_userinfo where id=#{id}
     </select>
 </mapper>

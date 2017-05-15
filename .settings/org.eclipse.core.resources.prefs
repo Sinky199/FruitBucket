@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
-encoding//WebRoot/WEB-INF/pages/login.jsp=UTF-8
-encoding//WebRoot/WEB-INF/pages/userList.jsp=UTF-8
+encoding//WebRoot/WEB-INF/pages/user/login.jsp=UTF-8
+encoding//WebRoot/WEB-INF/pages/user/userList.jsp=UTF-8
+encoding//WebRoot/WEB-INF/pages/userInfo/signUp.jsp=UTF-8

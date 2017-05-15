@@ -12,7 +12,7 @@ import org.test.po.User;
 import org.test.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user1")
 public class UserController {
 	@Autowired
 	private UserService service;
@@ -27,9 +27,11 @@ public class UserController {
 		return "userList";
 	};
 	
+	
+	
 	@RequestMapping("/toRegist")
 	public String toRegist(){
-		return "regist";
+		return "user/regist";
 	}
 	
 	@RequestMapping("/toLogin")

@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="User" type="org.test.po.User"/>
+        <typeAlias alias="User" type="org.test.po.UserInfo"/>
     </typeAliases>
     <mappers>
         <mapper resource="org/test/dao/UserMapper.xml" />

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -19,31 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<script src="../../resource/bootstrap/js/jquery-3.1.1.js"></script>
   </head>
   
   <body>
-    <form action=http://localhost:8080/SSM/user/regist>
+    <form action=http://localhost:8080/SSM/user/login id="dialog-login">
  		<table>
- 			<tr>
- 				<td>name:</td>
- 				<td>
- 					<input type="text" name="name"/>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td>gender:</td>
- 				<td>
- 					<input type="text" name="gender"/>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td>age:</td>
- 				<td>
- 					<input type="text" name="age"/>
- 				</td>
- 			</tr>
- 			</>
  			
  			<tr>
  				<td>username:</td>
@@ -57,25 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  					<input type="password" name="password"/>
  				</td>
  			</tr>
- 			<tr>
- 				<td>password2:</td>
- 				<td>
- 					<input type="password" name="password2"/>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td>mail:</td>
- 				<td>
- 					<input type="text" name="mail"/>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td>phonenum:</td>
- 				<td>
- 					<input type="text" name="phonenum"/>
- 				</td>
- 			</tr>
- 			<tr><input type="submit"></tr>
+ 			
+ 			<tr><input type="submit" name="登录"></tr>
  		</table>	   
     </form>
   </body>
